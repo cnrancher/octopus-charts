@@ -1,6 +1,7 @@
-apiVersion: v1
-appVersion: "v1.0.0-rc.1"
+apiVersion: v2
+appVersion: v4.0.5
 description: A Helm chart for EMQ X
 name: emqx
+type: application
 version: v1.0.0-rc.1
 icon: file://./emqx.png

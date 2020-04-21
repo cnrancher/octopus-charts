@@ -20,9 +20,9 @@ spec:
     protocol: TCP
     targetPort: {{ .Values.emqxConfig.EMQX_LISTENER__SSL__EXTERNAL | default 8883 }}
   - name: mgmt
-    port: {{ .Values.emqxConfig.EMQX_MANAGEMENT__LISTENER__HTTP | default 8080 }}
+    port: {{ .Values.emqxConfig.EMQX_MANAGEMENT__LISTENER__HTTP | default 8081 }}
     protocol: TCP
-    targetPort: {{ .Values.emqxConfig.EMQX_MANAGEMENT__LISTENER__HTTP | default 8080 }}
+    targetPort: {{ .Values.emqxConfig.EMQX_MANAGEMENT__LISTENER__HTTP | default 8081 }}
   - name: websocket
     port: {{ .Values.emqxConfig.EMQX_LISTENER__WS__EXTERNAL | default 8083 }}
     protocol: TCP
@@ -64,9 +64,9 @@ spec:
     protocol: TCP
     targetPort: {{ .Values.emqxConfig.EMQX_LISTENER__SSL__EXTERNAL | default 8883 }}
   - name: mgmt
-    port: {{ .Values.emqxConfig.EMQX_MANAGEMENT__LISTENER__HTTP | default 8080 }}
+    port: {{ .Values.emqxConfig.EMQX_MANAGEMENT__LISTENER__HTTP | default 8081 }}
     protocol: TCP
-    targetPort: {{ .Values.emqxConfig.EMQX_MANAGEMENT__LISTENER__HTTP | default 8080 }}
+    targetPort: {{ .Values.emqxConfig.EMQX_MANAGEMENT__LISTENER__HTTP | default 8081 }}
   - name: websocket
     port: {{ .Values.emqxConfig.EMQX_LISTENER__WS__EXTERNAL | default 8083 }}
     protocol: TCP
