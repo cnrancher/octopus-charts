@@ -1,0 +1,45 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: flink-operator
+  namespace: kube-system
+spec:
+  chart: flink-operator
+  repo: http://charts.cnrancher.cn/api/mqtt/charts
+  targetNamespace: flink-operator-system
+  valuesContent: |-
+   # The number of replicas of the operator Deployment
+   replicas: 1
+
+   # Watch custom resources in the namespace, ignore other namespaces. If empty, all namespaces will be watched.
+   watchNamespace:
+
+   flinkOperatorNamespace: "flink-operator-system"
+
+   # The defination of the operator image
+   operatorImage:
+     name: metatronx/flink-operator
+     pullPolicy: IfNotPresent
+     
+   webhookCertImage:
+     name: parchk/flink-operator-webhook-cert:latest
+
+   serviceAccount:
+     # Specifies whether a service account should be created
+     create: true
+     # The name of the service account to use.
+     # If not set and create is true, a name is generated using the fullname template
+     name:
+
+   resources: {}
+   # We usually recommend not to specify default resources and to leave this as a conscious
+   # choice for the user. This also increases chances charts run on environments with little
+   # resources, such as Minikube. If you do want to specify resources, uncomment the following
+   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+   # limits:
+   #   cpu: 100m
+   #   memory: 128Mi
+   # requests:
+   #   cpu: 100m
+   #   memory: 128Mi
+   
