@@ -1,0 +1,32 @@
+---
+kind: pipeline
+name: amd64
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: helm
+  image: alpine/helm:3.1.1
+  commands:
+  - ./scripts/upload.sh
+  settings:
+    environment:
+      HELM_REPO_USERNAME:
+        from_secret: helm_username
+      HELM_REPO_PASSWORD:
+        from_secret: helm_password
+  when:
+    ref:
+      include:
+      - "refs/heads/master"
+
+node:
+  instance: agent-amd64
+trigger:
+  event:
+    include:
+    - push
+    - pull_request
+    - tag

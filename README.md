@@ -1,4 +1,5 @@
 # Octopus-UI Catalog
+[![Build Status](http://drone-pandaria.cnrancher.com/api/badges/cnrancher/octopus-charts/status.svg)](http://drone-pandaria.cnrancher.com/cnrancher/octopus-charts)
 
 A curated collection of Helm charts for Octopus-UI catalog. If you are looking for the octopus helm chart see [octopus-chart](https://github.com/cnrancher/octopus-chart).
 
