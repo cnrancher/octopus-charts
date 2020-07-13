@@ -6,3 +6,4 @@ version: "0.1.1"
 keywords:
   - flink
 home: https://github.com/GoogleCloudPlatform/flink-on-k8s-operator
+icon: https://flink.apache.org/img/flink-header-logo.svg
